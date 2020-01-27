@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -o xtrace
+# set -o xtrace
 set -o nounset
 set -o pipefail
 
@@ -11,8 +11,9 @@ get_jar_to_run() {
 }
 
 readonly jar_file="${target_dir}/$(get_jar_to_run)"
-readonly opts="-Dspring.profiles.active=prod"
+readonly opts="-Dspring.profiles.active=development"
+readonly jar_opts="--spring.cloud.config.server.git.username=${GITLAB_USER} --spring.cloud.config.server.git.password=${GITLAB_PASSWORD}"
 
-java ${opts} -jar "${jar_file}" "${work_dir}/menu.xls"
+java ${opts} -jar "${jar_file}" ${jar_opts}
 
 exit

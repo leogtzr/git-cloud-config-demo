@@ -1,0 +1,2 @@
+To refresh: curl --noproxy '*' -X POST http://localhost:8080/actuator/refresh
+

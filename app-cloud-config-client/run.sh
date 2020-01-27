@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -o xtrace
+# set -o xtrace
 set -o nounset
 set -o pipefail
 
@@ -13,6 +13,6 @@ get_jar_to_run() {
 readonly jar_file="${target_dir}/$(get_jar_to_run)"
 readonly opts="-Dspring.profiles.active=development"
 
-java ${opts} -jar "${jar_file}" "${work_dir}/menu.xls"
+java ${opts} -jar "${jar_file}"
 
 exit

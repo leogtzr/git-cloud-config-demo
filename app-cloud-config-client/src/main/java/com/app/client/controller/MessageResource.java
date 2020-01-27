@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RefreshScope()
-public class MessageResource {
+@RefreshScope
+    public class MessageResource {
 
     @Value("${msg}")
     private String message;
